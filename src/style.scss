@@ -1,0 +1,94 @@
+$p1_green:#16C79A;
+$p1_darkblue:#19456B;
+$p1_blue:#11698E;
+$p1_white:#F8F1F1;
+
+@mixin bold {
+  font-weight: 900;
+  font-variation-settings: "wght" 900, "dots" 7;
+}
+
+body{
+  background-color: $p1_white;
+}
+
+h2,h3{
+  color: $p1_darkblue;
+}
+
+p{
+  color: $p1_blue;
+}
+
+article{
+  direction: rtl;
+  width: 97.5%;
+  @media only screen and (min-width: 320px){
+    max-width: 320px;
+  }
+  .income-btn{
+    background-color: $p1_green;
+    color: $p1_white;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include bold;
+  }
+}
+
+.bi-x-circle-fill{
+  position: absolute;
+  color: $p1_darkblue;
+  top: 0;
+  left: 0;
+  transform: translate(-30%,-30%) scale(1.6);
+}
+
+.modal-treasure-cont,.modal-income-cont,.modal-cost-cont{
+  width: 100%;height: 100%;
+  background-color: rgba($p1_darkblue,.5);
+  direction: rtl;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: .25s ease-out;
+}
+
+.treasure-cont,.income-cont,.cost-cont{
+  background-color: $p1_white;
+  width: 90%;
+  max-width: 320px;
+  transition: .25s ease-out;
+}
+
+.treasure-cont{
+  transform: translateY(-50%);
+}
+.cost-cont{
+  max-width: 300px !important;
+}
+.income-cont,.cost-cont{
+  transform: translateY(100%);
+  #new-income:focus{
+    border:2px solid $p1_green !important;
+  }
+  .rialTxt{
+    color: $p1_blue;
+  }
+  .bi-check{
+    background-color: $p1_green;
+    color: $p1_white;
+    height: 100%;
+  }
+}
+
+.basis-12\.5{
+  flex-basis: 12.5%;
+}
+

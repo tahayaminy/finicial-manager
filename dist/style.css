@@ -1,0 +1,91 @@
+body {
+  background-color: #F8F1F1;
+}
+
+h2, h3 {
+  color: #19456B;
+}
+
+p {
+  color: #11698E;
+}
+
+article {
+  direction: rtl;
+  width: 97.5%;
+}
+@media only screen and (min-width: 320px) {
+  article {
+    max-width: 320px;
+  }
+}
+article .income-btn {
+  background-color: #16C79A;
+  color: #F8F1F1;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 900;
+  font-variation-settings: "wght" 900, "dots" 7;
+}
+
+.bi-x-circle-fill {
+  position: absolute;
+  color: #19456B;
+  top: 0;
+  left: 0;
+  transform: translate(-30%, -30%) scale(1.6);
+}
+
+.modal-treasure-cont, .modal-income-cont, .modal-cost-cont {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(25, 69, 107, 0.5);
+  direction: rtl;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.25s ease-out;
+}
+
+.treasure-cont, .income-cont, .cost-cont {
+  background-color: #F8F1F1;
+  width: 90%;
+  max-width: 320px;
+  transition: 0.25s ease-out;
+}
+
+.treasure-cont {
+  transform: translateY(-50%);
+}
+
+.cost-cont {
+  max-width: 300px !important;
+}
+
+.income-cont, .cost-cont {
+  transform: translateY(100%);
+}
+.income-cont #new-income:focus, .cost-cont #new-income:focus {
+  border: 2px solid #16C79A !important;
+}
+.income-cont .rialTxt, .cost-cont .rialTxt {
+  color: #11698E;
+}
+.income-cont .bi-check, .cost-cont .bi-check {
+  background-color: #16C79A;
+  color: #F8F1F1;
+  height: 100%;
+}
+
+.basis-12\.5 {
+  flex-basis: 12.5%;
+}
+
+/*# sourceMappingURL=style.css.map */
