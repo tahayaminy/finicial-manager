@@ -1,6 +1,7 @@
 const $ = el => {
     return document.querySelector(el);
 }
+var divided=0;
 var hamiT = [
     {id:0,name: 'ضروریات', money: 1123558, img: 'basic-needs.png'},
     {id:1,name: 'آموزش', money: 6500000, img: 'education.png'},
@@ -11,7 +12,7 @@ var pishtazT = [
     {id:0,name: 'استقلال مالی', money: 17297380.5, img: 'strength.png'},
     {id:1,name: 'پس انداز', money: 17297380.5, img: 'deposit.png'}
 ];
-let data=[hamiT,pishtazT];
+let data=[hamiT,pishtazT,divided];
 
 var costOp=true;
 
@@ -21,15 +22,17 @@ if (localStorage.getItem("finicialManager") === null) {
     let dataWR = localStorage.getItem("finicialManager");
     let data = JSON.parse(dataWR);
     hamiT=data[0];
-    pishtazT=data[1]
+    pishtazT=data[1];
+    divided=data[2]
 }
 function save(){
-    data=[hamiT,pishtazT];
+    data=[hamiT,pishtazT,divided];
     localStorage.setItem("finicialManager", `${JSON.stringify(data)}`);
 }
 var costValues={id:null,txt:null}
 $('#hamiValue').innerText = treasureValue(hamiT);
 $('#pishtazValue').innerText = treasureValue(pishtazT);
+$('#div-income').innerText = divided;
 function treasureValue(treasure) {
     let money = 0;
     for (let item of treasure) {
@@ -160,6 +163,9 @@ function income(){
     }
     $('#hamiValue').innerText = treasureValue(hamiT);
     $('#pishtazValue').innerText = treasureValue(pishtazT);
+    let divIncome=income*.2;
+    divided=divIncome.toLocaleString('en-US');
+    $('#div-income').innerText = divided;
     closeModalIncome();
 }
 function slider(){

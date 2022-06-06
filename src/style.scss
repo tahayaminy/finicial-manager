@@ -8,7 +8,9 @@ $p2-red:#FC5185;
   font-weight: 900;
   font-variation-settings: "wght" 900, "dots" 7;
 }
-
+.text-green{
+  color:$p1_green;
+}
 body{
   background-color: $p1_white;
 }
