@@ -88,4 +88,23 @@ article .income-btn {
   flex-basis: 12.5%;
 }
 
+.slider {
+  background-color: #F8F1F1;
+  border: 1px solid #19456B;
+  width: 40px;
+  border-radius: 100px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  transition: 0.2s all;
+}
+.slider .slider-btn {
+  background-color: #11698E;
+  width: 15px;
+  height: 15px;
+  border-radius: 40px;
+  margin-right: 0;
+  transition: 0.2s all;
+}
+
 /*# sourceMappingURL=style.css.map */

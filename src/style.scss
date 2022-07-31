@@ -3,6 +3,7 @@ $p1_darkblue:#19456B;
 $p1_blue:#11698E;
 $p1_white:#F8F1F1;
 
+$p2-red:#FC5185;
 @mixin bold {
   font-weight: 900;
   font-variation-settings: "wght" 900, "dots" 7;
@@ -91,4 +92,21 @@ article{
 .basis-12\.5{
   flex-basis: 12.5%;
 }
+.slider{
+  background-color: $p1_white;
+  border: 1px solid $p1_darkblue;
+  width: 40px;
+  border-radius: 100px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  transition: .2s all;
+  .slider-btn{
+    background-color: $p1_blue;
+    width: 15px;height: 15px;
+    border-radius: 40px;
+    margin-right: 0;
 
+    transition: .2s all;
+  }
+}

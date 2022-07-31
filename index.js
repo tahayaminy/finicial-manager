@@ -11,7 +11,10 @@ var pishtazT = [
     {id:0,name: 'استقلال مالی', money: 17297380.5, img: 'strength.png'},
     {id:1,name: 'پس انداز', money: 17297380.5, img: 'deposit.png'}
 ];
-let data=[hamiT,pishtazT]
+let data=[hamiT,pishtazT];
+
+var costOp=true;
+
 if (localStorage.getItem("finicialManager") === null) {
     localStorage.setItem("finicialManager", `${JSON.stringify(data)}`);
 } else {
@@ -105,10 +108,15 @@ function withDrawModal(id,txt){
 function cost(){
     let string=$('#new-cost').value;
     let cost=string.replace(/,/g, '');
+    cost*=1;
     if (costValues.txt == 'hami') {
         for(let item of hamiT){
             if(costValues.id==item.id){
-                item.money-=cost;
+                if(costOp){
+                    item.money-=cost;
+                }else{
+                    item.money+=cost;
+                }
             }
         }
         $('#hamiValue').innerText = treasureValue(hamiT);
@@ -117,7 +125,11 @@ function cost(){
     } else if (costValues.txt == 'pishtaz') {
         for(let item of pishtazT){
             if(costValues.id==item.id){
-                item.money-=cost;
+                if(costOp){
+                    item.money-=cost;
+                }else{
+                    item.money+=cost;
+                }
             }
         }
         $('#pishtazValue').innerText = treasureValue(pishtazT);
@@ -149,4 +161,16 @@ function income(){
     $('#hamiValue').innerText = treasureValue(hamiT);
     $('#pishtazValue').innerText = treasureValue(pishtazT);
     closeModalIncome();
+}
+function slider(){
+    if(costOp){
+        $('.slider').style=`background-color: #16C79A;`;
+        $('.slider-btn').style=`background-color: #F8F1F1;`
+        $('.slider-btn').style=`margin-right: calc(100% - 15.5px);`
+    }else{
+        $('.slider').style=`background-color: #F8F1F1;`;
+        $('.slider-btn').style=`background-color: #11698E;`
+        $('.slider-btn').style=`margin-right: 0;`
+    }
+    costOp=!costOp;
 }
